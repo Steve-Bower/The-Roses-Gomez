@@ -23,7 +23,7 @@
       href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Oswald:wght@400;500;600&family=Source+Sans+3:wght@400;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/styles.css?v=16" />
+    <link rel="stylesheet" href="css/styles.css?v=25" />
     <link rel="alternate" hreflang="en" href="https://rosesgomez.com/" />
     <link rel="alternate" hreflang="es" href="https://rosesgomez.com/es.html" />
     <link rel="alternate" hreflang="x-default" href="https://rosesgomez.com/" />
@@ -35,8 +35,9 @@
       <div class="wrap header-inner">
         <a class="brand" href="#home">
           <img src="assets/logo-vivid.jpg?v=3" alt="" width="48" height="52" />
-          <span>The Roses Gómez</span>
+          <span class="brand-name">The Roses Gómez</span>
         </a>
+        <p class="header-address">75 Castro Ave, San Rafael</p>
         <nav id="site-nav" class="site-nav">
           <a href="#services">Servicios</a>
           <a href="#video">Video</a>
@@ -45,9 +46,14 @@
         </nav>
         <div class="header-end">
           <nav class="lang-toggle" aria-label="Idioma" translate="no">
-            <a href="index.html" hreflang="en">English</a>
-            <span aria-hidden="true">/</span>
-            <a href="es.html" hreflang="es" aria-current="page">Español</a>
+            <a href="index.html" hreflang="en" title="English">
+              <img src="assets/flags/us.svg" alt="" width="22" height="16" />
+              <span class="visually-hidden">English</span>
+            </a>
+            <a href="es.html" hreflang="es" aria-current="page" title="Español">
+              <img src="assets/flags/mx.svg" alt="" width="22" height="16" />
+              <span class="visually-hidden">Español</span>
+            </a>
           </nav>
           <button
             class="nav-toggle"
@@ -79,7 +85,10 @@
             Una experiencia de barbería de primera. Pasa o llama antes.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="tel:+14157555739">Llamar a la barbería</a>
+            <a class="btn btn-primary btn-call" href="tel:+14157555739">
+              <span>Llamar a la barbería</span>
+              <span class="btn-phone">(415) 755-5739</span>
+            </a>
             <a
               class="btn btn-ghost"
               href="https://www.instagram.com/the_rosesbarber/"
@@ -95,6 +104,9 @@
         <div class="wrap">
           <h2 class="visually-hidden">Servicios</h2>
           <ul class="service-grid">
+            <li class="service-banner">
+              <img src="assets/services/es/banner.jpg" alt="Disfruta nuestros cortes y afeitados de primera" width="1400" height="700" />
+            </li>
             <li>
               <img src="assets/services/es/walk-in.jpg" alt="Pasa sin cita" width="616" height="800" />
             </li>
@@ -102,13 +114,7 @@
               <img src="assets/services/es/faded-and-more.jpg" alt="Fades y más" width="637" height="800" />
             </li>
             <li>
-              <img src="assets/services/es/call-ahead.jpg" alt="O llama antes" width="800" height="775" />
-            </li>
-            <li>
               <img src="assets/services/es/beard-trims.jpg" alt="Recorte de bigote y barba" width="562" height="800" />
-            </li>
-            <li>
-              <img src="assets/services/es/haircuts-and-shaves.jpg" alt="Disfruta de nuestros cortes y afeitados de primera" width="800" height="455" />
             </li>
             <li>
               <img src="assets/services/es/little-man-cuts.jpg" alt="Cortes para niños" width="555" height="800" />
@@ -142,68 +148,56 @@
       </section>
 
       <section id="video" class="video">
-        <div class="wrap video-panel">
-          <p class="eyebrow">Desde Instagram</p>
-          <h2>Mira la barbería</h2>
-          <p class="section-intro">
-            Mira The Roses Gómez Barbería en movimiento en Instagram.
-          </p>
-          <a
-            class="btn btn-primary"
-            href="https://www.instagram.com/reel/DJmtueHScBb/?stkn=MXVuNXZkdGczMmV2cg=="
-            target="_blank"
-            rel="noopener noreferrer"
-            >Ver video en Instagram</a
-          >
-        </div>
-      </section>
-
-      <section class="instagram-feed">
         <div class="wrap">
-          <div class="ig-embed">
-            <blockquote
-              class="instagram-media"
-              data-instgrm-permalink="https://www.instagram.com/the_rosesbarber/?utm_source=ig_embed&amp;utm_campaign=loading"
-              data-instgrm-version="14"
-              style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"
-            >
-              <div style="padding:16px;">
-                <a
-                  href="https://www.instagram.com/the_rosesbarber/?utm_source=ig_embed&amp;utm_campaign=loading"
-                  style="background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Ver este perfil en Instagram
-                </a>
-                <p style="color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; text-align:center;">
+          <p class="eyebrow">Desde Instagram</p>
+          <h2 class="visually-hidden">Mira la barbería</h2>
+          <div class="ig-row">
+            <div class="ig-embed">
+              <blockquote
+                class="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/reel/DJmtueHScBb/?utm_source=ig_embed&amp;utm_campaign=loading"
+                data-instgrm-version="14"
+                style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"
+              >
+                <div style="padding:16px;">
+                  <a
+                    href="https://www.instagram.com/reel/DJmtueHScBb/?utm_source=ig_embed&amp;utm_campaign=loading"
+                    style="background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Ver este video en Instagram
+                  </a>
+                </div>
+              </blockquote>
+            </div>
+            <div class="ig-embed">
+              <blockquote
+                class="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/the_rosesbarber/?utm_source=ig_embed&amp;utm_campaign=loading"
+                data-instgrm-version="14"
+                style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"
+              >
+                <div style="padding:16px;">
                   <a
                     href="https://www.instagram.com/the_rosesbarber/?utm_source=ig_embed&amp;utm_campaign=loading"
-                    style="color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px;"
+                    style="background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;"
                     target="_blank"
                     rel="noopener noreferrer"
-                    >the roses gomez barber shop</a
                   >
-                  (@<a
-                    href="https://www.instagram.com/the_rosesbarber/?utm_source=ig_embed&amp;utm_campaign=loading"
-                    style="color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px;"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >the_rosesbarber</a
-                  >)
-                  · Fotos y videos de Instagram
-                </p>
-              </div>
-            </blockquote>
-            <script async src="https://www.instagram.com/embed.js"></script>
+                    Ver este perfil en Instagram
+                  </a>
+                </div>
+              </blockquote>
+            </div>
           </div>
+          <script async src="https://www.instagram.com/embed.js"></script>
         </div>
       </section>
 
       <section id="visit" class="visit">
         <div class="wrap visit-grid">
           <div>
-            <p class="eyebrow">Encuéntranos</p>
             <h2>Visita la barbería</h2>
             <address>
               75 Castro Avenue<br />
@@ -229,10 +223,6 @@
                 >@the_rosesbarber</a
               >
             </div>
-            <aside class="visit-card">
-              <p>Pasa sin cita o reserva.</p>
-              <p>Creado para la gente, por The Roses Gómez.</p>
-            </aside>
           </div>
           <div class="visit-map">
             <iframe
@@ -246,22 +236,6 @@
         </div>
       </section>
     </main>
-
-    <footer class="site-footer">
-      <div class="wrap footer-inner">
-        <p>The Roses Gómez Barbería</p>
-        <p>
-          <a href="https://rosesgomez.com">RosesGomez.com</a>
-          ·
-          <a
-            href="https://www.instagram.com/the_rosesbarber/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Instagram</a
-          >
-        </p>
-      </div>
-    </footer>
 
     <script src="js/main.js?v=2"></script>
   </body>

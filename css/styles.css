@@ -111,44 +111,60 @@ address {
 
 .header-inner {
   min-height: 4.25rem;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "brand end"
+    "address end";
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+  column-gap: 0.75rem;
+  row-gap: 0.15rem;
+  padding-block: 0.4rem;
 }
 
 .header-end {
+  grid-area: end;
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  margin-left: auto;
 }
 
 .lang-toggle {
   display: flex;
   align-items: center;
   flex-shrink: 0;
-  gap: 0.4rem;
-  font-family: Oswald, sans-serif;
-  letter-spacing: 0.08em;
-  font-size: 0.85rem;
-  text-transform: none;
+  gap: 0.35rem;
 }
 
 .lang-toggle a {
   text-decoration: none;
-  padding: 0.35rem 0.15rem;
+  padding: 0.25rem;
   min-height: 2.75rem;
   display: inline-flex;
   align-items: center;
-  color: var(--muted);
+  opacity: 0.55;
+}
+
+.lang-toggle img {
+  display: block;
+  width: 1.375rem;
+  height: 1rem;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.28);
+  object-fit: cover;
 }
 
 .lang-toggle a[aria-current="page"] {
-  color: var(--ink);
+  opacity: 1;
+}
+
+.lang-toggle a:hover,
+.lang-toggle a:focus-visible {
+  opacity: 1;
 }
 
 .brand {
+  grid-area: brand;
   display: flex;
   align-items: center;
   gap: 0.7rem;
@@ -157,6 +173,18 @@ address {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 0.95rem;
+}
+
+.header-address {
+  grid-area: address;
+  margin: 0;
+  padding-left: 3.1rem;
+  text-align: left;
+  white-space: nowrap;
+  font-family: Oswald, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--rose);
 }
 
 .brand img {
@@ -272,8 +300,7 @@ address {
   margin-bottom: 0.4rem;
 }
 
-.hero-copy,
-.section-intro {
+.hero-copy {
   color: var(--muted);
 }
 
@@ -303,6 +330,19 @@ address {
   color: #fff;
 }
 
+.btn-call {
+  flex-direction: column;
+  gap: 0.15rem;
+  line-height: 1.15;
+  padding-block: 0.55rem;
+}
+
+.btn-phone {
+  font-size: 0.78em;
+  letter-spacing: 0.06em;
+  font-weight: 400;
+}
+
 .btn-ghost {
   color: var(--ink);
 }
@@ -328,19 +368,28 @@ h3 {
     var(--bg);
 }
 
-.instagram-feed {
-  padding: 0 0 3.5rem;
+.ig-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  justify-items: center;
+  margin-top: 1rem;
 }
 
 .ig-embed {
   display: flex;
   justify-content: center;
-  margin: 0 auto;
-  max-width: 540px;
+  width: 100%;
+  max-width: 326px;
+  min-width: 0;
 }
 
-.ig-embed .instagram-media {
+.ig-embed .instagram-media,
+.ig-embed iframe {
   margin-inline: auto !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
 }
 
 .service-grid {
@@ -383,6 +432,15 @@ h3 {
   object-fit: contain;
 }
 
+.service-banner {
+  grid-column: 1 / -1;
+}
+
+.service-banner img {
+  width: 70%;
+  margin-inline: auto;
+}
+
 .visit {
   background: var(--bg-alt);
   border-top: 1px solid var(--line);
@@ -404,19 +462,6 @@ h3 {
   color: var(--muted);
 }
 
-.visit-card {
-  border: 1px solid var(--line);
-  padding: 1.4rem;
-  margin-top: 1.5rem;
-  background:
-    linear-gradient(180deg, rgba(58, 110, 168, 0.12), transparent 50%),
-    #0b0b0b;
-}
-
-.visit-card p:last-child {
-  margin-bottom: 0;
-}
-
 .visit-map {
   border: 1px solid var(--line);
   background: #0b0b0b;
@@ -432,44 +477,35 @@ h3 {
   border: 0;
 }
 
-.site-footer {
-  padding: 1.5rem 0 2rem;
-  border-top: 1px solid var(--line);
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
-.footer-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-}
-
-.site-footer a {
-  color: var(--ink);
-}
-
 .video {
   padding: 3.5rem 0;
   text-align: center;
   border-top: 1px solid var(--line);
 }
 
-.video-panel {
-  max-width: 36rem;
-}
-
-.video-panel .btn {
-  margin: 0.5rem 0 0;
-}
-
 @media (min-width: 760px) {
+  .ig-row {
+    grid-template-columns: minmax(0, 326px) minmax(0, 326px);
+    justify-content: center;
+    justify-items: stretch;
+    align-items: start;
+  }
+
   .nav-toggle {
     display: none;
   }
 
   .header-inner {
     display: flex;
+    grid-template-areas: none;
+    padding-block: 0;
+    gap: 1rem;
+  }
+
+  .brand,
+  .header-address,
+  .header-end {
+    grid-area: auto;
   }
 
   .site-nav,
@@ -484,12 +520,15 @@ h3 {
     border: 0;
   }
 
-  .site-nav {
-    margin-left: auto;
+  .header-address {
+    flex: 1;
+    padding-left: 0;
+    text-align: center;
+    white-space: nowrap;
   }
 
   .header-end {
-    margin-left: 1.1rem;
+    margin-left: 0.4rem;
   }
 
   .site-nav a {
@@ -501,8 +540,7 @@ h3 {
     min-height: auto;
   }
 
-  .visit-grid,
-  .service-grid {
+  .visit-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -513,16 +551,10 @@ h3 {
   }
 
   .service-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .hero {
     padding: 4rem 0 5rem;
-  }
-
-  .footer-inner {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
   }
 }
