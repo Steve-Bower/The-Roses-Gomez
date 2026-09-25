@@ -92,10 +92,10 @@ address {
 }
 
 .eyebrow {
-  font-family: Cinzel, "Times New Roman", serif;
-  letter-spacing: 0.28em;
+  font-family: Oswald, sans-serif;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 0.78rem;
+  font-size: 1rem;
   color: var(--rose);
   margin-bottom: 0.5rem;
 }
@@ -291,6 +291,7 @@ address {
 .hero h1 span {
   display: block;
   color: #fff;
+  margin-top: 0.475em;
 }
 
 .lede {
