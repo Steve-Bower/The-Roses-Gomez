@@ -1,0 +1,7 @@
+# Source photos — extracted web assets live in /assets
+/2026-08-07*.jpg
+/assets/originals/
+tools/
+.DS_Store
+Thumbs.db
+desktop.ini
