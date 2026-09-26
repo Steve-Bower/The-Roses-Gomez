@@ -459,8 +459,25 @@ h3 {
   text-decoration: none;
 }
 
-.hours {
-  color: var(--muted);
+.visit-hours dl {
+  margin: 0;
+}
+
+.visit-hours dl div {
+  margin: 0 0 1rem;
+}
+
+.visit-hours dt {
+  font-family: Oswald, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--rose);
+  margin-bottom: 0.2rem;
+}
+
+.visit-hours dd {
+  margin: 0;
+  color: var(--ink);
 }
 
 .visit-map {
@@ -542,7 +559,8 @@ h3 {
   }
 
   .visit-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.25fr);
+    align-items: start;
   }
 
   .visit-map,
